@@ -7,6 +7,9 @@ from urllib.error import URLError, HTTPError
 import json
 import deepl
 
+# 시크릿에서 auth_key 가져오기
+auth_key = st.secrets["auth_key"]
+# DeepL 번역기 초기화
 translator = deepl.Translator(auth_key)
 
 def process_srt_file(input_file, output_file):

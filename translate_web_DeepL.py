@@ -30,11 +30,11 @@ def process_srt_file(input_file, output_file):
                     thai_text = block[2] if any('\u0E00' <= char <= '\u0E7F' for char in block[2]) else None
 
                     if korean_text and not thai_text:
-                        thai_translation = translator.translate_text(korean_text, "ko", "th")
+                        thai_translation = translator.translate_text(korean_text, "KO", "TH")
                         outfile.write(korean_text + "\n")
                         outfile.write(thai_translation + "\n\n")
                     elif thai_text and not korean_text:
-                        korean_translation = translator.translate_text(thai_text, "th", "ko")
+                        korean_translation = translator.translate_text(thai_text, "TH", "KO")
                         outfile.write(korean_translation + "\n")
                         outfile.write(thai_text + "\n\n")
                     else:
